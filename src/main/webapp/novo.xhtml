@@ -1,0 +1,59 @@
+<ui:composition template="WEB-INF/templates/layout.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"	
+	xmlns:p="http://primefaces.org/ui">
+	<f:metadata>
+	  <f:viewAction action="novo.xhtml" />
+	</f:metadata>
+	<ui:define name="titulo">Novo</ui:define>
+	<ui:define name="corpo">
+	
+	  <div align="center">
+		
+		<h1><font face="verdana">Novo Usuario</font></h1>			
+	    <h:form class="ui form" id="form">                             
+	     
+	       <p:messages id="messages" showDetail="true" closable="true" />                       
+	     	       	     
+	       <h:panelGrid columns="2">
+	       
+	         <p:outputLabel value="ID:" for="txtId"/>
+	  	     <p:inputText id="txtId" value="#{usuarioMB.usuario.id}" size="10" />
+	  	     
+	  	     <p:outputLabel value="Nome:" for="txtNome"/>
+	  	     <p:inputText id="txtNome" value="#{usuarioMB.usuario.nome}" size="30" required="true" />
+	  	     
+	  	     <p:outputLabel value="Cpf:" for="txtCpf"/>
+	  	     <p:inputText id="txtCpf" value="#{usuarioMB.usuario.cpf}" size="15" required="true" />
+	  	     
+	  	     <p:outputLabel value="Email:" for="txtEmail"/>
+	  	     <p:inputText id="txtEmail" value="#{usuarioMB.usuario.email}" size="30" required="true" />
+	  	     
+	  	     <p:outputLabel value="Fone:" for="txtFone"/>
+	  	     <p:inputText id="txtFone" value="#{usuarioMB.usuario.fone}" size="10" required="true" />
+	  	     
+	  	     <p:outputLabel value="Senha:" for="txtSenha"/>
+	  	     <p:inputText id="txtSenha" value="#{usuarioMB.usuario.senha}" size="20" required="true" />
+	  	     
+	  	     <p:outputLabel value="Perfil:" for="slcPerfil"/>	  	     	  	     
+	  	     <p:selectOneMenu value="#{usuarioMB.perfil.nome}"
+				id="slcPerfil" filter="true" filterMatchMode="contains">
+				<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+				<f:selectItems value="#{usuarioMB.perfis}"
+				var="perfil" itemValue="#{perfil}"
+				itemLabel="#{perfil.nome}" />
+			 </p:selectOneMenu>
+			 	  	     	  	     	  	     	  	  	  	    	  	     	  	       	       	                                                                                                                                                   							     		  		                     
+	       </h:panelGrid>
+	       <br/>
+	       <p:commandButton  value="Gravar" actionListener="#{usuarioMB.salvar()}" update="messages" ajax="false"/>
+	       <p:commandButton  value="Cancelar" />
+	               
+	    </h:form>
+	 
+	  </div>
+	    
+    </ui:define>
+     
+</ui:composition>

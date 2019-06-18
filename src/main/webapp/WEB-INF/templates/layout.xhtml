@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+  <h:head>
+    <title>Template Web</title>
+  </h:head>
+  <h:body>
+    <!--<h:form id="form">-->
+      <table width="100%">
+        <tr>
+          <td colspan="2" align="center" style="height:80px" bgcolor="#0099bf">
+            <ui:insert name="cabecalho">                        
+            
+			  <!-- 
+			  <div id="layout-topbar">
+				 <a href="#"><p:graphicImage name="images/logo.jpg"  library="adamantium-layout" style="height:60px;  margin-top:18px;" /></a>
+				 <ul id="top-menu">
+					<li>
+						<a><i class="icon-user2"></i> <span><p:outputLabel value="Seja bem vindo: Mark Roger"/> </span></a>						
+					</li>
+					<li>
+						<a class="menulink Animated05"><i class="icon-x"></i> <span><p:outputLabel value="Sair do sistema"/></span></a>					
+					</li>
+				 </ul>
+			  </div>
+			  -->              			  			  			 
+			  
+            </ui:insert>
+          </td>
+        </tr>
+        <tr>
+          <td width="200px" valign="top">
+            <ui:insert name="menu">
+			
+			  <h:form>
+				<p:panelMenu style="width:250px">
+					<p:submenu label="Cadastros">
+						<p:menuitem value="Usuarios" icon="icon-users" />
+						<p:menuitem value="Perfis"   icon="icon-user" />
+					</p:submenu>
+					
+					<p:submenu label="Configuracoes">
+						<p:menuitem value="Configuracoes" icon="icon-users" />						
+					</p:submenu>
+					
+				</p:panelMenu>	
+			  </h:form>
+									              			  			  			  			
+            </ui:insert>
+          </td>
+          <td>
+            <ui:insert name="conteudo">
+              <ui:insert name="corpo" />
+            </ui:insert>			
+            <div style="height:60px"></div>						
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center" height="60" bgcolor="black">
+            <ui:insert name="rodape">
+			            
+            </ui:insert>			
+          </td>
+        </tr>
+      </table>
+    <!-- </h:form> -->
+	
+	<h:outputScript name="js/ripple-effect.js"           library="adamantium-layout" />
+	<h:outputScript name="js/perfect-scrollbar.js"       library="adamantium-layout" />
+	<h:outputScript name="js/layout.js"                  library="adamantium-layout" />
+	<h:outputStylesheet name="css/core-layout.css"       library="adamantium-layout" />
+	<h:outputStylesheet name="css/animate.css"           library="adamantium-layout" />
+	<h:outputStylesheet name="css/adamantium-font.css"   library="adamantium-layout" />
+	<h:outputStylesheet name="css/ripple-effect.css"     library="adamantium-layout" />
+	<h:outputStylesheet name="css/perfect-scrollbar.css" library="adamantium-layout" />
+	<h:outputStylesheet name="css/font-awesome.css"	     library="adamantium-layout" />
+	<h:outputStylesheet name="css/adamantium-layout.css" library="adamantium-layout" />
+	
+  </h:body>
+</html>
